@@ -2,8 +2,6 @@
 
 # This script will install ros-kinetic-desktop-full
 
-
-
 #Configure Ubuntu Repositories
 add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ xenial restricted universe multiverse"
 
@@ -15,6 +13,9 @@ apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD
 
 #Update the indexes
 apt-get update
+
+#Install C/C++ Compilers
+apt-get -y install build-essential
 
 #Install ROS with full Desktop features: ROS, rqt, rviz, robot-generic libraries, 2D/3D simulators, navigation and 2D/3D perception
 apt-get -y install ros-kinetic-desktop-full
@@ -28,3 +29,6 @@ echo "source /opt/ros/kinetic/setup.bash" >> /home/vagrant/.bashrc
 
 #Install RosInstall
 apt-get -y install python-rosinstall
+
+#Install Catkin tools
+apt-get -y install ros-kinetic-catkin
