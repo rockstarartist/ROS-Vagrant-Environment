@@ -21,7 +21,7 @@ Vagrant.configure("2") do |config|
     vb.memory = "3072"
     vb.cpus = 2
     # Customize the amount of video RAM for the VM, over 256MB causes instability issues
-    v.customize ["modifyvm", :id, "--vram", "128"]
+    vb.customize ["modifyvm", :id, "--vram", "128"]
   end
 
   # Install GUI and virtualbox additions
