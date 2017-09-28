@@ -17,26 +17,35 @@ Vagrant.configure("2") do |config|
     # Display the VirtualBox GUI when booting the machine
     vb.gui = true
 
-    # Customize the amount of memory on the VM:
+    # Customize the amount of memory and the number of CPU's allocated on the VM:
     vb.memory = "3072"
     vb.cpus = 2
+
     # Customize the amount of video RAM for the VM, over 256MB causes instability issues
     vb.customize ["modifyvm", :id, "--vram", "128"]
+
   end
+
+  # Setup Port Forwarding for rosbridge server
+  config.vm.network "forwarded_port", guest: 11311, host: 11311, protocol: "tcp"
+  config.vm.network "forwarded_port", guest: 11311, host: 11311, protocol: "udp"
+  config.vm.network "forwarded_port", guest: 9090, host: 9090, protocol: "tcp"
+  config.vm.network "forwarded_port", guest: 9090, host: 9090, protocol: "udp"
 
   # Install GUI and virtualbox additions
   config.vm.provision "shell", inline: "sudo apt-get update"
   config.vm.provision "shell", inline: "sudo apt-get -y install --no-install-recommends ubuntu-desktop virtualbox-guest-dkms virtualbox-guest-utils virtualbox-guest-x11"
   config.vm.provision "shell", inline: "sudo apt-get -y install gnome-terminal"
 
-  #Install all ROS dependencies and environment stuff for development on VM
+  # Install all ROS dependencies and environment stuff for development on VM
   config.vm.provision "shell", path: "ros-bootstrap.sh"
-  #Correct RosDep permissions
+
+  # Correct RosDep permissions
   config.vm.provision "shell", inline: "sudo rosdep fix-permissions"
   config.vm.provision "shell", inline: "rosdep update", privileged: false
 
-  #Setup Catkin Base Project (Customize to your liking)
-  #Currently testing this
-  #config.vm.provision "shell", path: "catkin-workspace-setup.sh"
+  # Setup Default Catkin Base Project
+  # We need to run this as the vagrant user, so that the workspace gets installed correctly
+  config.vm.provision "shell", inline: "su -c /vagrant/catkin-workspace-setup.sh vagrant"
 
 end

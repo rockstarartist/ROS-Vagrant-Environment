@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-#Setup your Catkin WorkSpace
+#Setup default Catkin WorkSpace
+source /opt/ros/kinetic/setup.bash
 mkdir -p ~/catkin_ws/src
 cd ~/catkin_ws/src
 catkin_init_workspace

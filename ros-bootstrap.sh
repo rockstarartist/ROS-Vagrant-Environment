@@ -27,14 +27,17 @@ apt-get -y install ros-kinetic-desktop-full
 rosdep init
 rosdep update
 
-#Setup ROS environment variables
-echo "source /opt/ros/kinetic/setup.bash" >> /home/vagrant/.bashrc
-
 #Install RosInstall
 apt-get -y install python-rosinstall
 
 #Install Catkin tools
 apt-get -y install ros-kinetic-catkin
+
+#Install ROS bridge server
+apt-get -y install ros-kinetic-rosbridge-suite
+
+#Setup ROS environment variables
+echo "source /opt/ros/kinetic/setup.bash" >> /home/vagrant/.bashrc
 
 #Install Atom Editor
 apt-get -y install atom
