@@ -28,18 +28,21 @@ https://www.vagrantup.com/downloads.html
 Utilize the Vagrant installer to install Vagrant.
 
 #### 3.) Install this project
-Checkout this project into a directory and run the following command in the directory:
+Checkout this project into a directory and run the following command in the directory on the command line:
 ```
 vagrant up
 vagrant reload default
 ```
+This will then begin to build the VM. This should take approximately
+15+ minutes at first, (subsequent VM rebuilds will be about 5 minutes) as it is installing Ubunutu software
+and the ROS and Turtlebot software.
 
-This will then build the VM. This should take approximately
-15+ minutes at first, (subsequently about 5 minutes) as it is installing Ubunutu software
-and the ROS and turtlebot software. The vagrant reload default will restart the VM so that
+Once the console has finished with a slew of installation commands, run the subsequent 'vagrant reload default' command on the command line prompt as shown above. The vagrant reload default will restart the VM so that all
 the packages take with the OS.
 
-## Notes 
+## Notes
+* Default user is: vagrant
+* Default password is: vagrant
 * Catkin Default workspace is setup and available for use in the Vagrant user directory
 * The ROS bridge server can be ran by launching the following command on the command line:
 ```
