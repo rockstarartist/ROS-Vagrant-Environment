@@ -25,7 +25,10 @@ Download latest version of vagrant from the following site:
 ```
 https://www.vagrantup.com/downloads.html
 ```
-Utilize the Vagrant installer to install Vagrant.
+##### What is Vagrant?
+> Vagrant provides easy to configure, reproducible, and portable work environments built on top of industry-standard technology and controlled by a single consistent workflow to help maximize the productivity and flexibility of you and your team.
+>
+>In this project, the virtual machine is provisioned on top of VirtualBox. Then, shell scripts automatically install and configure software on the virtual machine.
 
 #### 3.) Install this project
 Checkout this project into a directory and run the following command in the directory on the command line:
