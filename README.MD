@@ -20,6 +20,9 @@ installation of their software:
 ```
 https://www.virtualbox.org/
 ```
+##### What is VirtualBox?
+> VirtualBox is a powerful x86 and AMD64/Intel64 virtualization product that allows an unmodified operating system with all of its installed software to run in a special environment, on top of your existing operating system.
+
 #### 2.) Install Vagrant
 Download latest version of vagrant from the following site:
 ```
