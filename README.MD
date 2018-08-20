@@ -1,4 +1,4 @@
-# Ubuntu 16.04 LTS with ROS (Robotic Operating System) Software Installed
+# Ubuntu 16.04 LTS with ROS Kinetic (Robotic Operating System) Software Installed
 
 This git project sets up an Ubuntu LTS desktop vm with GUI and ROS, using Vagrant and a
 bash shell script to provision the VM (Virtual Box is the VM Provider).
