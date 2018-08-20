@@ -16,7 +16,7 @@ design and develop the software for a robot using Ubuntu Core with ROS.
 Please select the branch of the ROS framework version you want installed. Then follow the directions
 provided in that branch's README.md file to setup the ROS vm.
 
-The current versions and their branch location:
+The current versions and their branch location:<br/>
 [kinetic](https://github.com/rockstarartist/ROS-Vagrant-Environment/tree/kinetic)<br/>
 [melodic](https://github.com/rockstarartist/ROS-Vagrant-Environment/tree/melodic)
 
