@@ -1,6 +1,6 @@
-# Ubuntu 16.04 LTS with ROS (Robotic Operating System) Software Installed
+# Vagrant Provisioned ROS (Robotic Operating System) Virtual Machines
 
-This git project sets up an Ubuntu LTS desktop vm with GUI and ROS, using Vagrant and a
+This git project sets up an Ubuntu desktop vm with GUI and ROS, using Vagrant and a
 bash shell script to provision the VM (Virtual Box is the VM Provider).
 
 The intent of this project is to setup a base development robotics stack, to
@@ -13,6 +13,8 @@ design and develop the software for a robot using Ubuntu Core with ROS.
 * VirtualBox 5.0.4 +
 
 ## Installation
+Please select the branch of the ROS framework version you want installed. Then follow the directions
+provided in that branch's README.md file to setup the ROS vm. You will need to also install the following software to run the virtual machines that will contain ROS:
 
 #### 1.) Install VirtualBox
 Download the latest version of VirtualBox and utilize their instructions on the
@@ -32,25 +34,3 @@ https://www.vagrantup.com/downloads.html
 > Vagrant provides easy to configure, reproducible, and portable work environments built on top of industry-standard technology and controlled by a single consistent workflow to help maximize the productivity and flexibility of you and your team.
 >
 >In this project, the virtual machine is provisioned on top of VirtualBox. Then, shell scripts automatically install and configure software on the virtual machine.
-
-#### 3.) Install this project
-Checkout this project into a directory and run the following command in the directory on the command line:
-```
-vagrant up
-vagrant reload default
-```
-This will then begin to build the VM. This should take approximately
-15+ minutes at first, (subsequent VM rebuilds will be about 5 minutes) as it is installing Ubunutu software
-and the ROS and Turtlebot software.
-
-Once the console has finished with a slew of installation commands, run the subsequent 'vagrant reload default' command on the command line prompt as shown above. The vagrant reload default will restart the VM so that all
-the packages take with the OS.
-
-## Notes
-* Default user is: vagrant
-* Default password is: vagrant
-* Catkin Default workspace is setup and available for use in the Vagrant user directory
-* The ROS bridge server can be ran by launching the following command on the command line:
-```
-roslaunch rosbridge_server rosbridge_websocket.launch
-```
