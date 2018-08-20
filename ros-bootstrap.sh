@@ -3,7 +3,7 @@
 # This script will install ros-kinetic-desktop-full
 
 #Configure Ubuntu Repositories
-add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ xenial restricted universe multiverse"
+add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ bionic restricted universe multiverse"
 
 #Configure ROS.org repository
 sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
@@ -21,23 +21,23 @@ apt-get update
 apt-get -y install build-essential
 
 #Install ROS with full Desktop features: ROS, rqt, rviz, robot-generic libraries, 2D/3D simulators, navigation and 2D/3D perception
-apt-get -y install ros-kinetic-desktop-full
+apt-get -y install ros-melodic-desktop-full
 
 #initialize RosDep
 rosdep init
 rosdep update
 
 #Install RosInstall
-apt-get -y install python-rosinstall
+apt-get -y install python-rosinstall python-rosinstall-generator python-wstool build-essential
 
 #Install Catkin tools
-apt-get -y install ros-kinetic-catkin
+apt-get -y install ros-melodic-catkin
 
 #Install ROS bridge server
-apt-get -y install ros-kinetic-rosbridge-suite
+apt-get -y install ros-melodic-rosbridge-suite
 
 #Setup ROS environment variables
-echo "source /opt/ros/kinetic/setup.bash" >> /home/vagrant/.bashrc
+echo "source /opt/ros/melodic/setup.bash" >> /home/vagrant/.bashrc
 
 #Install Atom Editor
 apt-get -y install atom
